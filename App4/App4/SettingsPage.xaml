@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CounToast.SettingsPage"
+             BackgroundColor="{DynamicResource secondary_color}"
+             Title="Settings">
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Margin="20, 100" HorizontalOptions="CenterAndExpand">
+
+                <Label Text="Settings" FontSize="50" TextColor="{DynamicResource primary_color}" FontAttributes="Bold" HorizontalOptions="Center"/>
+                <Label Text="Change your background color !" HorizontalOptions="Center"/>
+
+                <StackLayout Margin="0, 50" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+                    <Button Text="Change Color" 
+                    Clicked="Change_Color_Button_Clicked"
+                    TextColor="{DynamicResource primary_color}"/>
+
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CounToast.FoodDetailPage"
+             Title="{Binding Name}">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Frame Margin="10" BorderColor="Black" >
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="100" />
+                        <RowDefinition Height="50" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="140" />
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="140" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0"
+                           Grid.Column="1"
+                           Text="{Binding Name}"
+                           LineBreakMode="TailTruncation"
+                           FontAttributes="Bold"
+                           FontSize="20"
+                           x:Name="name" />
+
+                    <Image Grid.Row="1"
+                           Grid.Column="1"
+                           Source="{Binding ImageURL}"
+                           Aspect="AspectFill"/>
+                    <StackLayout Grid.Row="2" Grid.Column="1">
+                        <Label Text="{Binding Price, StringFormat='Average Price: {0}$'}"
+                           HorizontalTextAlignment="Center" />
+
+                        <Label Text="{Binding Quantity, StringFormat='Total quantity: {0}'}"
+                           HorizontalTextAlignment="Center" />
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="1"
+                                 Grid.RowSpan="2"
+                                 Grid.Column="3">
+                        <Entry Placeholder="Price" Keyboard="Numeric" ReturnType="Next" x:Name="price" />
+                        <Entry Placeholder="Quantity" Keyboard="Numeric" MaxLength="2" ReturnType="Done" x:Name="quantity" />
+                        <Button Text="Add" BackgroundColor="{DynamicResource primary_color}" WidthRequest="75" HorizontalOptions="Center" Clicked="Add_To_Cart"/>
+
+                    </StackLayout>
+
+                </Grid>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

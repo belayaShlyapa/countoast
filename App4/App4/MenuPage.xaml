@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CounToast.MenuPage"
+             BackgroundColor="{DynamicResource secondary_color}">
+
+    <StackLayout>
+        <StackLayout Margin="0, 100, 0, 0" HorizontalOptions="Center">
+            <Label Text="CounToast" FontSize="50" TextColor="{DynamicResource primary_color}" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Start"/>
+        </StackLayout>
+
+        <StackLayout HorizontalOptions="CenterAndExpand" Margin="0, -10">
+            <Image Source="toast.png" HorizontalOptions="Center" HeightRequest="100" WidthRequest="100"/>
+        </StackLayout>
+
+        <StackLayout Margin="0, 40" HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
+
+            <Button Text="Count my cart" 
+                Clicked="Go_To_Count_My_Cart_Page"
+                TextColor="{DynamicResource primary_color}"/>
+
+            <Button Text="Review" 
+                Clicked="Go_To_Review_Page"
+                TextColor="{DynamicResource primary_color}"/>
+
+            <Button Text="Settings" 
+                Clicked="Go_To_Settings_Page"
+                TextColor="{DynamicResource primary_color}"/>
+
+        </StackLayout>
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand">
+            <Label Text="© 2021 BelayaShlyapa. All Rights Reserved." FontSize="10"/>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
