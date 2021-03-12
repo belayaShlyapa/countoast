@@ -3,12 +3,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CounToast.ReviewPage"
              BackgroundColor="{DynamicResource secondary_color}"
-             Title="My Cart">
+             Title="Review">
 
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-            <Label Text="Not available yet... Come back later please." TextColor="{DynamicResource primary_color}" />
-
+            <ListView ItemsSource="{Binding MyFoods}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame BorderColor="{DynamicResource primary_color}" CornerRadius="4">
+                                <StackLayout>
+                                    <Label Text="{Binding Name}" />
+                                    <Label Text="{Binding Price}" />
+                                    <Label Text="{Binding Quantity}" />
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Add" Clicked="Button_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

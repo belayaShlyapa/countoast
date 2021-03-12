@@ -112,6 +112,7 @@ namespace CounToastConsole
             }
             */
 
+            /*
             using (FoodDbContext context = new FoodDbContext())
             {
                 foreach(var f in context.FoodSet)
@@ -130,6 +131,8 @@ namespace CounToastConsole
                     Console.WriteLine($"{f.Id} {f.Name}, Price: {f.Price}, Quantity: {f.Quantity}");
                 }
             }
+            */
+            
         }
     }
 }
