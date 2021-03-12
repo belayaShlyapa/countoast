@@ -89,36 +89,15 @@ namespace CounToastLibrary
                 ImageURL = "https://media.healthyfood.com/wp-content/uploads/2017/03/What-to-do-with-lemons.jpg"
             }
         };
-
         public ObservableCollection<Food> SortedFoods
         {
             get
             {
-                ObservableCollection<Food> allFoods = new ObservableCollection<Food>(Foods);
-                ObservableCollection<Food> sortedFoods = new ObservableCollection<Food>();
-                bool elementExists;
-                foreach (Food f in allFoods) // for all storaged foods
-                {
-                    elementExists = false;
-                    foreach (Food sf in sortedFoods) // for all foods with single name 
-                    {
-                        if (sf.Name == f.Name) // same name <=> food already in sortedFoods list
-                        {
-                            elementExists = true;
-                            sf.Quantity += f.Quantity; // J'ajoute la quantité
-                            sf.Price = (sf.Price + (f.Price / f.Quantity)) / 2; // Prix moyen en fonction de la quantité ajoutée
-                            break;
-                        }
-                    }
-
-                    if (!elementExists)
-                    {
-                        Food temp = new Food { Name = f.Name, Price = f.Price, Quantity = f.Quantity, ImageURL = f.ImageURL };
-                        temp.Price = temp.Price / temp.Quantity; // Prix moyen
-                        sortedFoods.Add(temp);
-                    }
-                }
-                return sortedFoods;
+                var sortedFood = foods
+                    .GroupBy(f => f.Name)
+                    .Select(g => new Food { Name = g.Key, Price = g.Average(f => f.Price / f.Quantity), Quantity = g.Sum(q => q.Quantity), ImageURL = g.First().ImageURL });
+                    
+                return new ObservableCollection<Food>(sortedFood);
             }
         }
 
