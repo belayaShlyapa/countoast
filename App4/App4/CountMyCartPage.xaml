@@ -7,7 +7,7 @@
 
     <ContentPage.Content>
         <StackLayout Margin="5">
-            <CollectionView ItemsSource="{Binding Factory.SortedFoods}"
+            <CollectionView ItemsSource="{Binding SortedFoods}"
                             ItemsLayout="VerticalGrid, 2"
                             SelectionMode="Single"
                             SelectionChanged="CollectionView_ItemSelected"

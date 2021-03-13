@@ -7,7 +7,7 @@
 
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-            <ListView ItemsSource="{Binding MyFoods}">
+            <ListView ItemsSource="{Binding Foods}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

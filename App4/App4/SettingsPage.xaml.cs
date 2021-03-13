@@ -1,5 +1,7 @@
-﻿using System;
+﻿using CounToastLibrary;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +19,14 @@ namespace CounToast
             InitializeComponent();
         }
 
+        private ApplicationViewModel ApplicationVM
+        {
+            get
+            {
+                return (Application.Current as App).ApplicationVM;
+            }
+        }
+
         private static int backgroundColor = 0;
 
         private static Dictionary<int, Color> myColors = new Dictionary<int, Color>()
@@ -31,6 +41,30 @@ namespace CounToast
             backgroundColor++;
             backgroundColor %= myColors.Count;
             Application.Current.Resources["secondary_color"] = myColors[backgroundColor];
+        }
+
+        private async void Clear_Database_Button_Clicked(object sender, EventArgs e)
+        {
+            using (var context = new FoodDbContext(ApplicationVM.databaseFileName))
+            {
+                context.Database.EnsureCreated();
+                await context.Database.EnsureDeletedAsync();
+            }
+        }
+
+        private async void Create_Sample_Database_Button_Clicked(object sender, EventArgs e)
+        {
+            
+
+            using (var context = new FoodDbContext(ApplicationVM.databaseFileName))
+            {
+                context.Database.EnsureCreated();
+                foreach(Food f in Factory.SamplesFood)
+                {
+                    context.FoodSet.Add(f);
+                }
+                await context.SaveChangesAsync();
+            }
         }
     }
 }
