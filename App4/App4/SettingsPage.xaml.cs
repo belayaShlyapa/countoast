@@ -47,21 +47,19 @@ namespace CounToast
         {
             using (var context = new FoodDbContext(ApplicationVM.databaseFileName))
             {
-                context.Database.EnsureCreated();
+                await context.Database.EnsureCreatedAsync();
                 await context.Database.EnsureDeletedAsync();
             }
         }
 
         private async void Create_Sample_Database_Button_Clicked(object sender, EventArgs e)
         {
-            
-
             using (var context = new FoodDbContext(ApplicationVM.databaseFileName))
             {
-                context.Database.EnsureCreated();
+                await context.Database.EnsureCreatedAsync();
                 foreach(Food f in Factory.SamplesFood)
                 {
-                    context.FoodSet.Add(f);
+                    await context.FoodSet.AddAsync(f);
                 }
                 await context.SaveChangesAsync();
             }
