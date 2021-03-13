@@ -17,15 +17,5 @@ namespace CounToastLibrary
             }
         }
         public string ImageURL { get; set; }
-        
-        public static bool operator ==(Food f1, Food f2)
-        {
-            return f1.Name.Equals(f2.Name);
-        }
-
-        public static bool operator !=(Food f1, Food f2)
-        {
-            return !(f1.Name.Equals(f2.Name));
-        }
     }
 }
