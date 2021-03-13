@@ -26,10 +26,5 @@ namespace CounToast
             InitializeComponent();
             BindingContext = ApplicationVM;
         }
-
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-            // TODO
-        }
     }
 }
