@@ -44,7 +44,7 @@
                                  Grid.Column="3">
                         <Entry Placeholder="Price" Keyboard="Numeric" ReturnType="Next" x:Name="price" />
                         <Entry Placeholder="Quantity" Keyboard="Numeric" MaxLength="2" ReturnType="Done" x:Name="quantity" />
-                        <Button Text="Add" BackgroundColor="{DynamicResource primary_color}" WidthRequest="75" HorizontalOptions="Center" Clicked="Add_To_Cart"/>
+                        <Button Text="Add" BackgroundColor="{DynamicResource primary_color}" WidthRequest="75" HorizontalOptions="Center" Clicked="Add_To_Cart_Button_Clicked"/>
 
                     </StackLayout>
 
