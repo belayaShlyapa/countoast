@@ -98,5 +98,10 @@ namespace CounToastLibrary
                 ImageURL = "https://media.healthyfood.com/wp-content/uploads/2017/03/What-to-do-with-lemons.jpg"
             }
         };
+
+        public static string FindCorrespondingImageUrl(string foodName, FoodDbContext context)
+        {
+            return context.FoodSet.Where(f => f.Name == foodName).Select(f => f.ImageURL).First();
+        }
     }
 }

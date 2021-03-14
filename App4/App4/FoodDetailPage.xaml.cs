@@ -28,15 +28,16 @@ namespace CounToast
 
         private void Add_To_Cart_Button_Clicked(object sender, EventArgs e)
         {
-            Food foodToAdd = new Food {
-                Name = name.Text,
-                Price = Convert.ToDouble(price.Text),
-                Quantity = Convert.ToInt32(quantity.Text),
-                ImageURL = "https://media.istockphoto.com/vectors/hand-drawn-validation-icon-scanned-and-vectorized-brush-drawing-vector-id478369072?b=1&k=6&m=478369072&s=612x612&w=0&h=jAK7PMAvrIpS6eyKv8F6yiWdWYctn8ovM2eNt4Wyoxw="
-            };
-
             using (var context = new FoodDbContext(ApplicationVM.databaseFileName))
             {
+                string correspondingImageUrl = Factory.FindCorrespondingImageUrl(name.Text, context);
+                Food foodToAdd = new Food {
+                    Name = name.Text,
+                    Price = Convert.ToDouble(price.Text),
+                    Quantity = Convert.ToInt32(quantity.Text),
+                    ImageURL = correspondingImageUrl
+                };
+            
                 context.Database.EnsureCreated();
                 context.FoodSet.AddAsync(foodToAdd);
                 context.SaveChangesAsync();
