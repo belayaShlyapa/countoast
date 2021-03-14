@@ -14,7 +14,8 @@ namespace CounToastLibrary
         {
             var sortedFood = foods
                     .GroupBy(f => f.Name)
-                    .Select(g => new Food { Name = g.Key, Price = g.Average(f => f.Price / f.Quantity), Quantity = g.Sum(q => q.Quantity), ImageURL = g.First().ImageURL });
+                    .Select(g => new Food { Name = g.Key, Price = g.Average(f => f.Price / f.Quantity), Quantity = g.Sum(q => q.Quantity), ImageURL = g.First().ImageURL })
+                    .OrderBy(f => f.Name);
 
             return new ObservableCollection<Food>(sortedFood);
         }
