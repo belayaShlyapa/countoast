@@ -8,16 +8,31 @@
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
             <ListView ItemsSource="{Binding Foods}">
+                <ListView.Header>
+                    <Grid Margin="20, 20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="175" />
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="75" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Text="Food" FontAttributes="Bold" FontSize="18"/>
+                        <Label Grid.Column="1" Text="Price" FontAttributes="Bold" FontSize="18" />
+                        <Label Grid.Column="2" Text="Quantity" FontAttributes="Bold" FontSize="18" />
+                    </Grid>
+                </ListView.Header>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Frame BorderColor="{DynamicResource primary_color}" CornerRadius="4">
-                                <StackLayout>
-                                    <Label Text="{Binding Name}" />
-                                    <Label Text="{Binding Price}" />
-                                    <Label Text="{Binding Quantity}" />
-                                </StackLayout>
-                            </Frame>
+                            <Grid Margin="20, 0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="175" />
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="75" />
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Text="{Binding Name}" />
+                                <Label Grid.Column="1" Text="{Binding Price}" />
+                                <Label Grid.Column="2" Text="{Binding Quantity}" />
+                            </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
