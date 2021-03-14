@@ -32,5 +32,10 @@ namespace CounToast
             await Navigation.PushAsync(new FoodDetailPage());
             ApplicationVM.SelectedFood = null;
         }
+
+        private async void Add_New_Item_Button_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AddNewFoodPage());
+        }
     }
 }

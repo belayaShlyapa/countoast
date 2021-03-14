@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CounToast.AddNewFoodPage"
+             BackgroundColor="{DynamicResource secondary_color}"
+             Title="New Food">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Frame Margin="10" BorderColor="Black" >
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="50" />
+                        <ColumnDefinition Width="50" />
+                        <ColumnDefinition Width="25" />
+                        <ColumnDefinition Width="50" />
+                        <ColumnDefinition Width="50" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    
+                    <Entry Grid.Row="0"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="5"
+                        Placeholder="Food Name" 
+                        Keyboard="Text" 
+                        ReturnType="Next" 
+                        x:Name="name" />
+                    
+                    <Entry Grid.Row="1"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                        Placeholder="Price" 
+                        Keyboard="Numeric" 
+                        ReturnType="Next" 
+                        x:Name="price" />
+                    
+                    <Entry Grid.Row="1"
+                        Grid.Column="4"
+                        Grid.ColumnSpan="2"
+                        Placeholder="Quantity"
+                        Keyboard="Numeric"
+                        MaxLength="2"
+                        ReturnType="Done"
+                        x:Name="quantity" />
+
+                    <Button Grid.Row="2"
+                        Grid.Column="2"
+                        Grid.ColumnSpan="3"
+                        Text="Add" 
+                        Margin="0, 15, 0, 0"
+                        BackgroundColor="{DynamicResource primary_color}" 
+                        WidthRequest="75" />
+
+                </Grid>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

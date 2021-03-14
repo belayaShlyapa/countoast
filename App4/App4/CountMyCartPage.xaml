@@ -65,7 +65,7 @@
                 </CollectionView.ItemTemplate>
                 <CollectionView.Footer>
                     <StackLayout Padding="30">
-                        <Button Text="+" WidthRequest="60" HeightRequest="60" BorderRadius="30" HorizontalOptions="End" BackgroundColor="{DynamicResource primary_color}" TextColor="{DynamicResource secondary_color}" />
+                        <Button Text="+" WidthRequest="60" HeightRequest="60" BorderRadius="30" HorizontalOptions="End" BackgroundColor="{DynamicResource primary_color}" TextColor="{DynamicResource secondary_color}" Clicked="Add_New_Item_Button_Clicked" />
                     </StackLayout>
                 </CollectionView.Footer>
             </CollectionView>
