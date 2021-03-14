@@ -56,6 +56,7 @@ namespace CounToast
         {
             using (var context = new FoodDbContext(ApplicationVM.databaseFileName))
             {
+                await context.Database.EnsureDeletedAsync();
                 await context.Database.EnsureCreatedAsync();
                 foreach(Food f in Factory.SamplesFood)
                 {
