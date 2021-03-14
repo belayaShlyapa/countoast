@@ -12,14 +12,16 @@
                     <Grid Margin="10, 10">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="90" />
-                            <ColumnDefinition Width="70" />
-                            <ColumnDefinition Width="80" />
+                            <ColumnDefinition Width="55" />
+                            <ColumnDefinition Width="75" />
                             <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="50" />
                         </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" Text="Food" FontAttributes="Bold" FontSize="18"/>
-                        <Label Grid.Column="1" Text="Price" FontAttributes="Bold" FontSize="18" />
-                        <Label Grid.Column="2" Text="Quantity" FontAttributes="Bold" FontSize="18" />
-                        <Label Grid.Column="3" Text="Added Time" FontAttributes="Bold" FontSize="18" />
+                        <Label Grid.Column="0" Text="Food" FontAttributes="Bold" FontSize="16" />
+                        <Label Grid.Column="1" Text="Price" FontAttributes="Bold" FontSize="16" />
+                        <Label Grid.Column="2" Text="Quantity" FontAttributes="Bold" FontSize="16" />
+                        <Label Grid.Column="3" Text="Added Time" FontAttributes="Bold" FontSize="16" />
+                        <Label Grid.Column="4" Text="Delete" FontAttributes="Bold" FontSize="16" />
                     </Grid>
                 </ListView.Header>
                 <ListView.ItemTemplate>
@@ -28,14 +30,17 @@
                             <Grid Margin="10, 0">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="90" />
-                                    <ColumnDefinition Width="70" />
-                                    <ColumnDefinition Width="80" />
+                                    <ColumnDefinition Width="55" />
+                                    <ColumnDefinition Width="75" />
                                     <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="50" />
                                 </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Text="{Binding Id}" IsVisible="False" />
                                 <Label Grid.Column="0" Text="{Binding Name}" VerticalOptions="Center" />
                                 <Label Grid.Column="1" Text="{Binding Price}" VerticalOptions="Center" />
                                 <Label Grid.Column="2" Text="{Binding Quantity}" VerticalOptions="Center" />
                                 <Label Grid.Column="3" Text="{Binding AddedDateTime}" VerticalOptions="Center" />
+                                <Button Grid.Column="4" Text="X" BackgroundColor="{DynamicResource primary_color}" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" HorizontalOptions="Center" Padding="-1" Clicked="Delete_Button_Clicked"/>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
