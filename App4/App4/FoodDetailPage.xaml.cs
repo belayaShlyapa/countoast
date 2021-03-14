@@ -35,7 +35,8 @@ namespace CounToast
                     Name = name.Text,
                     Price = Convert.ToDouble(price.Text),
                     Quantity = Convert.ToInt32(quantity.Text),
-                    ImageURL = correspondingImageUrl
+                    ImageURL = correspondingImageUrl,
+                    AddedDateTime = DateTime.Now
                 };
             
                 context.Database.EnsureCreated();

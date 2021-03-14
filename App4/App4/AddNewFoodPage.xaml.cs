@@ -34,7 +34,8 @@ namespace CounToast
                     Name = name.Text,
                     Price = Convert.ToDouble(price.Text),
                     Quantity = Convert.ToInt32(quantity.Text),
-                    ImageURL = "https://media.istockphoto.com/vectors/tableware-line-icon-vector-id1040473414?k=6&m=1040473414&s=612x612&w=0&h=aZcXfva389LegX86VPFVEPVFArMCOkD5hvL-rE-mloQ="
+                    ImageURL = "https://media.istockphoto.com/vectors/tableware-line-icon-vector-id1040473414?k=6&m=1040473414&s=612x612&w=0&h=aZcXfva389LegX86VPFVEPVFArMCOkD5hvL-rE-mloQ=",
+                    AddedDateTime = DateTime.Now
                 };
 
                 context.Database.EnsureCreated();

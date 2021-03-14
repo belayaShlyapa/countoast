@@ -17,5 +17,6 @@ namespace CounToastLibrary
             }
         }
         public string ImageURL { get; set; }
-    }
+        public DateTime AddedDateTime { get; set; }
+}
 }

@@ -9,29 +9,33 @@
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
             <ListView ItemsSource="{Binding Foods}">
                 <ListView.Header>
-                    <Grid Margin="20, 20">
+                    <Grid Margin="10, 10">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="175" />
+                            <ColumnDefinition Width="90" />
+                            <ColumnDefinition Width="70" />
+                            <ColumnDefinition Width="80" />
                             <ColumnDefinition Width="100" />
-                            <ColumnDefinition Width="75" />
                         </Grid.ColumnDefinitions>
                         <Label Grid.Column="0" Text="Food" FontAttributes="Bold" FontSize="18"/>
                         <Label Grid.Column="1" Text="Price" FontAttributes="Bold" FontSize="18" />
                         <Label Grid.Column="2" Text="Quantity" FontAttributes="Bold" FontSize="18" />
+                        <Label Grid.Column="3" Text="Added Time" FontAttributes="Bold" FontSize="18" />
                     </Grid>
                 </ListView.Header>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid Margin="20, 0">
+                            <Grid Margin="10, 0">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="175" />
+                                    <ColumnDefinition Width="90" />
+                                    <ColumnDefinition Width="70" />
+                                    <ColumnDefinition Width="80" />
                                     <ColumnDefinition Width="100" />
-                                    <ColumnDefinition Width="75" />
                                 </Grid.ColumnDefinitions>
-                                <Label Grid.Column="0" Text="{Binding Name}" />
-                                <Label Grid.Column="1" Text="{Binding Price}" />
-                                <Label Grid.Column="2" Text="{Binding Quantity}" />
+                                <Label Grid.Column="0" Text="{Binding Name}" VerticalOptions="Center" />
+                                <Label Grid.Column="1" Text="{Binding Price}" VerticalOptions="Center" />
+                                <Label Grid.Column="2" Text="{Binding Quantity}" VerticalOptions="Center" />
+                                <Label Grid.Column="3" Text="{Binding AddedDateTime}" VerticalOptions="Center" />
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
