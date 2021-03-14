@@ -54,7 +54,8 @@
                         Text="Add" 
                         Margin="0, 15, 0, 0"
                         BackgroundColor="{DynamicResource primary_color}" 
-                        WidthRequest="75" />
+                        WidthRequest="75"
+                        Clicked="Add_To_Cart_Button_Clicked" />
 
                 </Grid>
             </Frame>
